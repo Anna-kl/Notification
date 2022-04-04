@@ -306,8 +306,8 @@ def sendEmail(email_address, data_insert, startPeriod, endPeriod):
     msg['From'] = fromaddr
     msg['To'] = toaddr
     msg['Subject'] = "Logotech Lab"
-    body = "Текущий отчет"
-    msg.attach(MIMEText(body, 'plain'))
+    # body = "Текущий отчет"
+    # msg.attach(MIMEText(body, 'plain'))
     count = list(map(lambda x: x['count'], data_insert))
     count = reduce(lambda x, y: x+y, count)
     location_s = []
