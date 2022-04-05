@@ -12,7 +12,8 @@ class SettingsDateTime(Base):
     createdatetime = Column(DateTime)
 
 from sqlalchemy import create_engine
-engine=create_engine('postgresql+psycopg2://postgres:2537300@localhost:5432/dashboards')
+
+engine=create_engine('postgresql://dufuauvnmhhnbi:e04834417d5b33baf80de46ff78c145979019532d52e0019de70b1e83dbf36b6@ec2-34-254-69-72.eu-west-1.compute.amazonaws.com:5432/ddq1javfo02shs')
 from  sqlalchemy.orm import sessionmaker
 session=sessionmaker()
 session.configure(bind=engine)
