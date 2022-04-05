@@ -1,7 +1,5 @@
 import requests
 import re
-import os
-
 
 myheaders={'Content-type':'application/json', 'Accept':'application/json'}
 # data= {"Username": os.environ['Username'],
