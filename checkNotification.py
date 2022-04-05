@@ -69,6 +69,7 @@ def getCountInDict(last, current, key):
 
 
 def getDataNotification():
+    print('start proccess')
     headers = {'Authorization':
                    'Bearer {}'.format(c['access_token']),
                'Content-type': 'application/json'}
@@ -135,13 +136,14 @@ def getDataNotification():
                               dataMtrItemLast,
                               startPeriod,
                               endPeriod)
-
+                    print('Письмо отправлено')
 
                 else:
                     currentState = SettingsDateTime(notificationid=notification['id'], currentstate=r.content.decode('utf8'),
                                                 state=False, createdatetime=datetime.now())
             mainSession.add(currentState)
             mainSession.commit()
+            print('Проверка завершена')
 
 def datetime_to_local_timezone(dt):
     epoch = dt.timestamp() # Get POSIX timestamp of the specified datetime.

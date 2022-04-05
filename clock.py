@@ -4,8 +4,9 @@ from checkNotification import getDataNotification
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', minutes=10)
+@sched.scheduled_job('interval', minutes=1)
 def timed_job():
+    print('Start clock')
     getDataNotification()
 
 sched.start()
