@@ -152,7 +152,7 @@ html = '''<!DOCTYPE html>
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
         <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
-            (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
+            Текущий отчет готов
         </div>
         <!-- Visually Hidden Preheader Text : END -->
 
@@ -183,99 +183,29 @@ html = '''<!DOCTYPE html>
 	             
 </td>
 	            </tr>
-		        <!-- Email Header : END -->
 
-                <!-- Hero Image, Flush : BEGIN -->
-
-                <!-- Hero Image, Flush : END -->
-
-                <!-- 1 Column Text + Button : BEGIN -->
                 <tr>
                     <td style="background-color: #ffffff;">
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tr>
                             <tr>
                                 <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                    <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">Отчет об обновленных данных</h1>
-                                    <p style="margin: 0;">Ожидание ввода показателей с insert1 по insert2</p>
-                                    <p>Время окончания проверки insert3 </p>
+                                    <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">Показатели загружены в систему</h1>
+                                    <p>Здравствуйте, Уважаемый руководитель,
+<a href="https://monitoring.gpn.supply/"> просмотреть отчет можно по ссылке </a></p>
 
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                                    <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 18px; line-height: 22px; color: #333333; font-weight: bold;">Результат проверки</h2>
-                                    <ul style="padding: 0; margin: 0 0 10px 0; list-style-type: disc;">
-										<li style="margin:0 0 10px 30px;" class="list-item-first">Всего обновлено insert4 показателей</li>
-										<li style="margin:0 0 10px 30px;">Обновлены показатели в insert5 локаций</li>
-
-									</ul>
-
-                                </td>
-                            </tr>
+                            
                         </table>
                     </td>
                 </tr>
                 <!-- 1 Column Text + Button : END -->
 
                 <!-- 2 Even Columns : BEGIN -->
-                <tr>
-                    <td style="padding: 0 10px 40px 10px; background-color: #ffffff;">
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <td valign="top" width="50%">
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                        <tr>
-
-                                            <td style="text-align: center; padding: 0 10px;">
-                                                <details>
-                                                <summary>Список Локаций с обновленными показателями</summary>
-                                                    <p>insert7</p>
-                                                     </details>
-                                            </td>
-
-                                        </tr>
-
-                                    </table>
-                                </td>
-<!--                                <td valign="top" width="50%">-->
-<!--                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">-->
-<!--                                        <tr>-->
-<!--                                            <td style="text-align: center; padding: 0 10px;">-->
-<!--                                               <h3>Список локаций</h3>-->
-<!--                                            </td>-->
-<!--                                        </tr>-->
-
-<!--                                    </table>-->
-<!--                                </td>-->
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <!-- 2 Even Columns : END -->
-
-                <!-- Clear Spacer : BEGIN -->
-<!--                <tr>-->
-<!--                    <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">-->
-<!--                        &nbsp;-->
-<!--                    </td>-->
-<!--                </tr>-->
-                <!-- Clear Spacer : END -->
-
-                <!-- 1 Column Text : BEGIN -->
-<!--                <tr>-->
-<!--                    <td style="background-color: #ffffff;">-->
-<!--                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">-->
-<!--                            <tr>-->
-<!--                                <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">-->
-<!--                                    <p style="margin: 0;">Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent laoreet malesuada cursus. Maecenas scelerisque congue eros eu posuere. Praesent in felis ut velit pretium lobortis rhoncus ut&nbsp;erat.</p>-->
-<!--                                </td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </td>-->
-<!--                </tr>-->
-                <!-- 1 Column Text : END -->
+                
+  
 
             </table>
 
@@ -314,12 +244,13 @@ def sendEmail(email_address, data_insert, startPeriod, endPeriod):
     distinct_locations=[]
     list(map(lambda x: location_s.extend(x['locations']), data_insert))
     distinct_locations = [i for i in location_s if i not in distinct_locations]
-    part2 = MIMEText(html.replace('insert1', startPeriod.strftime('%Y-%m-%d %H:%M'))
-                     .replace('insert2', endPeriod.strftime('%Y-%m-%d %H:%M'))
-                     .replace('insert3', datetime.now().strftime('%Y-%m-%d %H:%M'))
-                     .replace('insert4', str(count))
-                     .replace('insert5', str(len(distinct_locations)))
-                     .replace('insert7', '\n'.join(distinct_locations)), 'html')
+    part2 = MIMEText(html, 'html')
+    # part2 = MIMEText(html.replace('insert1', startPeriod.strftime('%Y-%m-%d %H:%M'))
+    #                  .replace('insert2', endPeriod.strftime('%Y-%m-%d %H:%M'))
+    #                  .replace('insert3', datetime.now().strftime('%Y-%m-%d %H:%M'))
+    #                  .replace('insert4', str(count))
+    #                  .replace('insert5', str(len(distinct_locations)))
+    #                  .replace('insert7', '\n'.join(distinct_locations)), 'html')
 
     msg.attach(part2)
 

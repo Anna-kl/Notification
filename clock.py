@@ -1,12 +1,12 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-from checkNotification import getDataNotification
+from checkNotification import get_data_notification
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', minutes=1)
+@sched.scheduled_job('interval', minutes=10)
 def timed_job():
     print('Start clock')
-    getDataNotification()
+    get_data_notification()
 
 sched.start()
