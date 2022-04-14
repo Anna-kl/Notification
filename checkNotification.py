@@ -1,7 +1,6 @@
 import json
 from datetime import datetime, time, timedelta
 from functools import reduce
-import smtplib, ssl
 import requests
 
 from Client import client
