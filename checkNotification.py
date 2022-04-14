@@ -94,7 +94,7 @@ def check_send_email(setting_time):
 def send_email(settings_time, email, last_state):
     if last_state is not None:
         sendEmail(email,
-                  json.loads(last_state.currentstate.decode('utf8')),
+                  json.loads(last_state.currentstate),
                   settings_time['startPeriod'],
                   settings_time['endPeriod'])
         last_state.state = True
