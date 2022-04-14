@@ -121,7 +121,7 @@ def get_data_notification():
                    'Bearer {}'.format(c['access_token']),
                'Content-type': 'application/json'}
     r = requests.get('{0}any-user/'.format(url), headers=headers, verify=False)
-    notifications = json.loads(r.content.decode('utf8'))
+    notifications = json.loads(r.content)
 
     main_session = session()
 
@@ -166,6 +166,7 @@ def get_data_notification():
                 if not check_zero(settings_time, data_mtr_items_current):
                     continue
 
+
                 for mtrType in indicators:
                     data_mtr_items_last = json.loads(last_state.currentstate)
                     if get_count_in_dict(data_mtr_items_last, data_mtr_items_current, mtrType):
@@ -183,7 +184,7 @@ def get_data_notification():
 
                 else:
                     current_state = SettingsDateTime(notificationid=notification['id'],
-                                                     currentstate=json.dumps(data_mtr_items_current),
+                                                     currentstate=json.dumps(data_mtr_items_current, ensure_ascii=True),
                                                      state=False, createdatetime=datetime.utcnow())
             main_session.add(current_state)
             main_session.commit()
