@@ -1,0 +1,284 @@
+[
+  {
+    "id": "ArrivalPlan",
+    "parentId": "Arrival",
+    "name": "Приход,План",
+    "selected": true
+  },
+  {
+    "id": "ArrivalAdjustedPlan",
+    "parentId": "Arrival",
+    "name": "Приход,Скорректированный план",
+    "selected": true
+  },
+  {
+    "id": "ArrivalDailyPlan",
+    "parentId": "Arrival",
+    "name": "Приход,Суточный план",
+    "selected": true
+  },
+  {
+    "id": "ArrivalFact",
+    "parentId": "Arrival",
+    "name": "Приход,Факт",
+    "selected": true
+  },
+  {
+    "id": "ExpenditurePlan",
+    "parentId": "Expenditure",
+    "name": "Расход,План",
+    "selected": true
+  },
+  {
+    "id": "ExpenditureAdjustedPlan",
+    "parentId": "Expenditure",
+    "name": "Расход,Скорректированный план",
+    "selected": true
+  },
+  {
+    "id": "ExpenditureDailyPlan",
+    "parentId": "Expenditure",
+    "name": "Расход,Суточный план",
+    "selected": true
+  },
+  {
+    "id": "ExpenditureFact",
+    "parentId": "Expenditure",
+    "name": "Расход,Факт",
+    "selected": true
+  },
+  {
+    "id": "FreightTurnoverPlan",
+    "parentId": "FreightTurnover",
+    "name": "Грузооборот,План",
+    "selected": true
+  },
+  {
+    "id": "FreightTurnoverAdjustedPlan",
+    "parentId": "FreightTurnover",
+    "name": "Грузооборот,Скорректированный план",
+    "selected": true
+  },
+  {
+    "id": "FreightTurnoverDailyPlan",
+    "parentId": "FreightTurnover",
+    "name": "Грузооборот,Суточный план",
+    "selected": true
+  },
+  {
+    "id": "FreightTurnoverFact",
+    "parentId": "FreightTurnover",
+    "name": "Грузооборот,Факт",
+    "selected": true
+  },
+  {
+    "id": "FreightTurnoverPerformed",
+    "parentId": "FreightTurnover",
+    "name": "Грузооборот,Выполнено, %",
+    "selected": true
+  },
+  {
+    "id": "CargoHandlingPlan",
+    "parentId": "CargoHandling",
+    "name": "Грузопереработка,План",
+    "selected": true
+  },
+  {
+    "id": "CargoHandlingAdjustedPlan",
+    "parentId": "CargoHandling",
+    "name": "Грузопереработка,Скорректированный план",
+    "selected": true
+  },
+  {
+    "id": "CargoHandlingDailyPlan",
+    "parentId": "CargoHandling",
+    "name": "Грузопереработка,Суточный план",
+    "selected": true
+  },
+  {
+    "id": "CargoHandlingFact",
+    "parentId": "CargoHandling",
+    "name": "Грузопереработка,Факт",
+    "selected": true
+  },
+  {
+    "id": "CargoHandlingPerformed",
+    "parentId": "CargoHandling",
+    "name": "Грузопереработка,Выполнено, %",
+    "selected": true
+  },
+  {
+    "id": "SeasonalDeliveryInitialPlanForYear",
+    "parentId": "SeasonalDelivery",
+    "name": "Сезонный завоз,Первоначальный план",
+    "selected": true
+  },
+  {
+    "id": "SeasonalDeliveryPlanForMonth",
+    "parentId": "SeasonalDelivery",
+    "name": "Сезонный завоз,План завоза",
+    "selected": true
+  },
+  {
+    "id": "SeasonalDeliveryDailyPlan",
+    "parentId": "SeasonalDelivery",
+    "name": "Сезонный завоз,Суточный план",
+    "selected": true
+  },
+  {
+    "id": "SeasonalDeliveryFact",
+    "parentId": "SeasonalDelivery",
+    "name": "Сезонный завоз,Факт",
+    "selected": true
+  },
+  {
+    "id": "SeasonalDeliveryPerformed",
+    "parentId": "SeasonalDelivery",
+    "name": "Сезонный завоз,Выполнено, %",
+    "selected": true
+  },
+  {
+    "id": "TotalMTR",
+    "parentId": "AccountingMtr",
+    "name": "Учет МТР,Всего МТР",
+    "selected": true
+  },
+  {
+    "id": "AccountingMtrUncapitalize",
+    "parentId": "AccountingMtr",
+    "name": "Учет МТР,Не оприходовано",
+    "selected": true
+  },
+  {
+    "id": "BidPlan",
+    "parentId": "Bid",
+    "name": "Заявки,План",
+    "selected": true
+  },
+  {
+    "id": "BidForecast",
+    "parentId": "Bid",
+    "name": "Заявки,Прогноз",
+    "selected": true
+  },
+  {
+    "id": "BidTotalFact",
+    "parentId": "Bid",
+    "name": "Заявки,Факт всего",
+    "selected": true
+  },
+  {
+    "id": "BidScheduledFact",
+    "parentId": "Bid",
+    "name": "Заявки,Факт в срок",
+    "selected": true
+  },
+  {
+    "id": "BidUnplanned",
+    "parentId": "Bid",
+    "name": "Заявки,Не запланированные",
+    "selected": true
+  },
+  {
+    "id": "BidOTIF",
+    "parentId": "Bid",
+    "name": "Заявки,OTIF",
+    "selected": true
+  },
+  {
+    "id": "Transport",
+    "parentId": "Resources",
+    "name": "Ресурсы,Транспорт",
+    "selected": true
+  },
+  {
+    "id": "GPMP",
+    "parentId": "Resources",
+    "name": "Ресурсы,ГПМ",
+    "selected": true
+  },
+  {
+    "id": "LaborResources",
+    "parentId": "Resources",
+    "name": "Ресурсы,Трудовые ресурсы",
+    "selected": true
+  },
+  {
+    "id": "FullnessBasesTotalSquare",
+    "parentId": "FullnessBases",
+    "name": "Хранение на базах,Общая площадь, Га",
+    "selected": true
+  },
+  {
+    "id": "FullnessBasesLoaded",
+    "parentId": "FullnessBases",
+    "name": "Хранение на базах,Загружено, Га",
+    "selected": true
+  },
+  {
+    "id": "FullnessBasesLoadedRubles",
+    "parentId": "FullnessBases",
+    "name": "Хранение на базах,Загружено, млн. руб",
+    "selected": true
+  },
+  {
+    "id": "FullnessBasesLoadedWeight",
+    "parentId": "FullnessBases",
+    "name": "Хранение на базах,Загружено, тонн",
+    "selected": true
+  },
+  {
+    "id": "HSEIndicatorDeath",
+    "parentId": "HSEIndicator",
+    "name": "HSE происшествия,Смерть",
+    "selected": true
+  },
+  {
+    "id": "HSEIndicatorDisability",
+    "parentId": "HSEIndicator",
+    "name": "HSE происшествия,НС с ВПТ",
+    "selected": true
+  },
+  {
+    "id": "HSEIndicatorMedicalCare",
+    "parentId": "HSEIndicator",
+    "name": "HSE происшествия,МП на производстве + ПП",
+    "selected": true
+  },
+  {
+    "id": "HSEIndicatorNearMiss",
+    "parentId": "HSEIndicator",
+    "name": "HSE происшествия,ПбП + ДТП + Алко + Аварии",
+    "selected": true
+  },
+  {
+    "id": "HSEIndicatorDangerWarning",
+    "parentId": "HSEIndicator",
+    "name": "HSE происшествия,Опасные случаи и действия",
+    "selected": true
+  },
+  {
+    "id": "ProjectIndicatorPlan",
+    "parentId": "ProjectIndicators",
+    "name": "Проектные показатели,Плановое количество пользователей",
+    "selected": true
+  },
+  {
+    "id": "ProjectIndicatorFact",
+    "parentId": "ProjectIndicators",
+    "name": "Проектные показатели,Фактическое количество пользователей",
+    "selected": true
+  },
+  {
+    "id": "ProductPlan",
+    "parentId": "Product",
+    "name": "Продукты,План",
+    "selected": true
+  },
+  {
+    "id": "ProductFact",
+    "parentId": "Product",
+    "name": "Продукты,Факт",
+    "selected": true
+  }
+]

@@ -1,3 +1,4 @@
+import json
 import smtplib
 from datetime import datetime
 from functools import reduce
@@ -142,10 +143,10 @@ html = '''<!DOCTYPE html>
 
 
 </head>
-<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
-	<center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #222222;">
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+	<center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #ffffff;">
     <!--[if mso | IE]>
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
     <tr>
     <td>
     <![endif]-->
@@ -192,6 +193,7 @@ html = '''<!DOCTYPE html>
                                 <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                                     <h1 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">Показатели загружены в систему</h1>
                                     <p>Здравствуйте, Уважаемый руководитель,
+                                    <p> {insert1}</p>
 <a href="https://monitoring.gpn.supply/"> просмотреть отчет можно по ссылке </a></p>
 
                                 </td>
@@ -227,7 +229,7 @@ html = '''<!DOCTYPE html>
 def sendEmail(email_address, data_insert, startPeriod, endPeriod):
     from email.mime.multipart import MIMEMultipart
     from email.mime.text import MIMEText
-
+    mtrTypes = json.load(open('mtrTypes', encoding='utf8'))
     fromaddr = "klimova_88@mail.ru"
     toaddr = email_address
     mypass = "4cqJXh2Gu1GauJMgHYa2"
@@ -240,11 +242,23 @@ def sendEmail(email_address, data_insert, startPeriod, endPeriod):
     # msg.attach(MIMEText(body, 'plain'))
     count = list(map(lambda x: x['count'], data_insert))
     count = reduce(lambda x, y: x+y, count)
+
+    mtr = []
+    for item in data_insert:
+        mtr.extend(list(filter(lambda x: x['id'] == item['mtrType'], mtrTypes)))
+    mtr = list(map(lambda x: x['name'], mtr))
+    mtr = ','.join(mtr)
+
+    if count == 0:
+        insert = 'Показатели не были вовремя загружены в систему'
+    else:
+        insert = 'Показатели: {0} - готовы'.format(mtr)
+
     location_s = []
     distinct_locations=[]
     list(map(lambda x: location_s.extend(x['locations']), data_insert))
     distinct_locations = [i for i in location_s if i not in distinct_locations]
-    part2 = MIMEText(html, 'html')
+    part2 = MIMEText(html.replace('{insert1}', insert), 'html')
     # part2 = MIMEText(html.replace('insert1', startPeriod.strftime('%Y-%m-%d %H:%M'))
     #                  .replace('insert2', endPeriod.strftime('%Y-%m-%d %H:%M'))
     #                  .replace('insert3', datetime.now().strftime('%Y-%m-%d %H:%M'))
