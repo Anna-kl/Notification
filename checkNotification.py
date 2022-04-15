@@ -3,7 +3,6 @@ from datetime import datetime, time, timedelta
 from functools import reduce
 import requests
 
-from Client import client
 from Models.SettingsDateTime import SettingsDateTime
 from report import sendEmail
 
@@ -16,7 +15,6 @@ Week = [{'name': 'Понедельник', 'id': 1},
         {'name': 'Воскресенье', 'id': 7}]
 url = 'https://test.pmc.gpn.supply/api/contexts/1/notifications/'
 #url = 'https://localhost:44321/api/contexts/1/notifications/'
-c = client.get_token()
 
 from sqlalchemy import create_engine, desc
 
@@ -115,10 +113,10 @@ def get_time_from_str(date):
         return date
 
 
-def get_data_notification():
+def get_data_notification(client):
     print('start proccess')
     headers = {'Authorization':
-                   'Bearer {}'.format(c['access_token']),
+                   'Bearer {}'.format(client['access_token']),
                'Content-type': 'application/json'}
     r = requests.get('{0}any-user/'.format(url), headers=headers, verify=False)
     print(r.status_code, r.content)

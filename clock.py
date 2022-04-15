@@ -1,5 +1,6 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 
+from Client import client
 from checkNotification import get_data_notification
 
 sched = BlockingScheduler()
@@ -7,6 +8,7 @@ sched = BlockingScheduler()
 @sched.scheduled_job('interval', minutes=5)
 def timed_job():
     print('Start clock')
-    get_data_notification()
+    c = client.get_token()
+    get_data_notification(с)
 
 sched.start()
