@@ -9,6 +9,6 @@ sched = BlockingScheduler()
 def timed_job():
     print('Start clock')
     c = client.get_token()
-    get_data_notification(с)
+    get_data_notification(c)
 
 sched.start()

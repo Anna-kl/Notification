@@ -201,4 +201,4 @@ def datetime_to_local_timezone(dt):
 
 
 # sendEmail('akklimova@gmail.com')
-get_data_notification()
+#get_data_notification()
