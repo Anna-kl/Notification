@@ -121,7 +121,7 @@ def get_data_notification():
                    'Bearer {}'.format(c['access_token']),
                'Content-type': 'application/json'}
     r = requests.get('{0}any-user/'.format(url), headers=headers, verify=False)
-    print(r.content)
+    print(r.status_code, r.content)
     notifications = json.loads(r.content)
 
     main_session = session()
