@@ -3,6 +3,7 @@ from datetime import datetime, time, timedelta
 from functools import reduce
 import requests
 
+from Client import client
 from Models.SettingsDateTime import SettingsDateTime
 from report import sendEmail
 
@@ -13,7 +14,7 @@ Week = [{'name': 'Понедельник', 'id': 1},
         {'name': 'Пятница', 'id': 5},
         {'name': 'Суббота', 'id': 6},
         {'name': 'Воскресенье', 'id': 7}]
-url = 'https://test.pmc.gpn.supply/api/contexts/1/notifications/'
+url = 'https://monitoring.gpn.supply/api/contexts/1/notifications/'
 #url = 'https://localhost:44321/api/contexts/1/notifications/'
 
 from sqlalchemy import create_engine, desc
@@ -201,4 +202,4 @@ def datetime_to_local_timezone(dt):
 
 
 # sendEmail('akklimova@gmail.com')
-#get_data_notification()
+#get_data_notification(client.get_token())

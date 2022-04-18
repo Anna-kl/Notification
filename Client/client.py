@@ -13,8 +13,8 @@ data= {"Username": 'weather',
 
 def get_token():
     params = {'button': 'login'}
-    #r=requests.post('https://core.gpn.supply/Account/Login/',  verify=False, data=data, params=params)
-    r = requests.post('https://test.gpn.supply/Account/Login/', verify=False, data=data, params=params)
+    r = requests.post('https://optiplan.gpn.supply/Account/Login/',  verify=False, data=data, params=params)
+    #r = requests.post('https://test.gpn.supply/Account/Login/', verify=False, data=data, params=params)
     r=requests.get(r.url, verify=False)
     r = requests.get(r.url, verify=False)
     params = r.url.split('#')[1]
