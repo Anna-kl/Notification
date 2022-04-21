@@ -13,7 +13,7 @@ class SettingsDateTime(Base):
 
 from sqlalchemy import create_engine
 
-engine=create_engine('postgresql://dufuauvnmhhnbi:e04834417d5b33baf80de46ff78c145979019532d52e0019de70b1e83dbf36b6@ec2-34-254-69-72.eu-west-1.compute.amazonaws.com:5432/ddq1javfo02shs')
+engine=create_engine('postgresql://xgb_ocpio:ZPyDk7j-cfHA@postgres78.1gb.ru:5432/xgb_ocpio')
 from  sqlalchemy.orm import sessionmaker
 session=sessionmaker()
 session.configure(bind=engine)

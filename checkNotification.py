@@ -20,7 +20,7 @@ url = 'https://monitoring.gpn.supply/api/contexts/1/notifications/'
 from sqlalchemy import create_engine, desc
 
 engine = create_engine(
-    'postgresql://dufuauvnmhhnbi:e04834417d5b33baf80de46ff78c145979019532d52e0019de70b1e83dbf36b6@ec2-34-254-69-72.eu-west-1.compute.amazonaws.com:5432/ddq1javfo02shs')
+    'postgresql://xgb_ocpio:ZPyDk7j-cfHA@postgres78.1gb.ru:5432/xgb_ocpio')
 from sqlalchemy.orm import sessionmaker
 
 session = sessionmaker()
@@ -202,4 +202,4 @@ def datetime_to_local_timezone(dt):
 
 
 # sendEmail('akklimova@gmail.com')
-#get_data_notification(client.get_token())
+get_data_notification(client.get_token())
