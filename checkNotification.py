@@ -115,7 +115,7 @@ def get_time_from_str(date):
 
 
 def get_data_notification(client):
-    print('start proccess')
+    print('start proccess {0}'.format(datetime.utcnow()))
     headers = {'Authorization':
                    'Bearer {}'.format(client['access_token']),
                'Content-type': 'application/json'}
