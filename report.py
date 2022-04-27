@@ -42,7 +42,11 @@ html = '''<!DOCTYPE html>
   transition: all 0.2s;
  background: radial-gradient(#FFE97F, #fff);">
         <div class="heading" style="text-align: center;">
-          <h1 class="heading__title" style="font-weight: 600;">Отчет по показателям</h1>
+          <h1 class="heading__title" style="font-weight: 600;">Уважаемый руководитель</h1>
+          <p class="heading__credits" style="margin: 10px 0px;
+  color: #888888;
+  font-size: 25px;
+  transition: all 0.5s;" > Отчет по insert1 обновлен </p>
           <p class="heading__credits" style="margin: 10px 0px;
   color: #888888;
   font-size: 25px;
@@ -70,7 +74,7 @@ html = '''<!DOCTYPE html>
   justify-self: end;"><i class="fas fa-times"></i></p>
         <h2 class="card__title" style="grid-row: 3/4;
   font-weight: 400;
-  color: #ffffff;">insert1</h2>
+  color: #ffffff;">insert0</h2>
         <p class="card__apply" style="grid-row: 4/5;
   align-self: center;">
           <a class="card__link" style="position: relative;
@@ -120,14 +124,15 @@ def sendEmail(email_address, data_insert, startPeriod, endPeriod):
     if count == 0:
         insert = 'Показатели не были вовремя загружены в систему'
     else:
-        insert = 'Показатели: {0} - готовы'.format(mtr)
+        insert = 'Показатели были загружены в систему'
 
     location_s = []
     distinct_locations = []
     list(map(lambda x: location_s.extend(x['locations']), data_insert))
     distinct_locations = [i for i in location_s if i not in distinct_locations]
-    part2 = MIMEText(html.replace('insert1', insert). \
+    part2 = MIMEText(html.replace('insert1', mtr). \
                      replace('insert2', str(count)). \
+                     replace('insert0', insert). \
                      replace('insert3', str(len(distinct_locations))), 'html')
     # part2 = MIMEText(html.replace('insert1', startPeriod.strftime('%Y-%m-%d %H:%M'))
     #                  .replace('insert2', endPeriod.strftime('%Y-%m-%d %H:%M'))
